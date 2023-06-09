@@ -15,6 +15,13 @@ public class Estacionamento {
         return validarValoresAcessos();
     };
 
+    //setando
+    public void setAcessoFracao(int acessofracao){
+        this.acessoFracao = acessofracao;
+    }
+    public int getAcessoFracao(){
+        return acessoFracao;
+    }
     public boolean descricaoEmBrancoException(){
         return descricaoEmBrancoException();
     };

@@ -1,13 +1,11 @@
-import lombok.*;
-@Getter @Setter
 public class Estacionamento {
 
     // Atributos
     private double valorPorcentagemContratante, valorDescontoHc, valorEstacionamento;
     private int capacidadeEstacionamento, acessoFracao;
-    private Tempo horarioAbertura, horarioEncerramento;
-    private TipoAcesso valoresAcessos;
-    private Acesso acessoEspecificoEstacionamento;
+    //private Tempo horarioAbertura, horarioEncerramento;
+    //private TipoAcesso valoresAcessos;
+    //private Acesso acessoEspecificoEstacionamento;
 
 
     //Métodos

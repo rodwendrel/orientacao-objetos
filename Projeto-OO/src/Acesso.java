@@ -1,49 +1,123 @@
-import lombok.*;
-@Getter @Setter
 public class Acesso {
 
 
     //Atributos
-    private Estacionamento acessoFracao, valorDescontoHc, valorEstacionamento;
+   // private Estacionamento acessoFracao, valorDescontoHc, valorEstacionamento;
     private String placa;
-    private boolean acessoHoraCheia, acessoDiurno, acessoNoturno, acessoMensalista, acessoEvento, valorAcesso;
-    private Tempo horarioEntrada, horarioSaida,  hora, minuto;
-    private  TipoAcesso acessoEspecifico;
-    private Estacionamento acessoEspecificoEstacionamento;
+    private int tipoDoAcesso; // Passando os acessos para int
+    private double valorAcesso;
+    private int horaEntrada, minutoEntrada, horaSaida, minutoSaida, horatotal, precototal; 
+    //private  TipoAcesso acessoEspecifico;
+    //private Estacionamento acessoEspecificoEstacionamento;
 
-    //Métodos
+    //Métodos Get e Set
 
-    public boolean validarCampos(){
+    public String getPlaca() {
+        return placa;
+    }
 
-        return validarCampos();
+    public int getHoraEntrada() {
+        return horaEntrada;
+    }
+
+    public void setHoraEntrada(int horaEntrada) {
+        this.horaEntrada = horaEntrada;
+    }
+
+    public int getMinutoEntrada() {
+        return minutoEntrada;
+    }
+
+    public void setMinutoEntrada(int minutoEntrada) {
+        this.minutoEntrada = minutoEntrada;
+    }
+
+    public int getHoraSaida() {
+        return horaSaida;
+    }
+
+    public void setHoraSaida(int horaSaida) {
+        this.horaSaida = horaSaida;
+    }
+
+    public int getMinutoSaida() {
+        return minutoSaida;
+    }
+
+    public void setMinutoSaida(int minutoSaida) {
+        this.minutoSaida = minutoSaida;
+    }
+
+    public int getHoratotal() {
+        return horatotal;
+    }
+
+    public void setHoratotal(int horatotal) {
+        this.horatotal = horatotal;
+    }
+
+    public int getPrecototal() {
+        return precototal;
+    }
+
+    public void setPrecototal(int precototal) {
+        this.precototal = precototal;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public int getTipoDoAcesso() {
+        return tipoDoAcesso;
+    }
+
+    public void setTipoDoAcesso(int tipoDoAcesso) {
+        this.tipoDoAcesso = tipoDoAcesso;
+    }
+
+    public double getValorAcesso() {
+        return valorAcesso;
+    }
+
+    public void setValorAcesso(double valorAcesso) {
+        this.valorAcesso = valorAcesso;
+    }
+    
+   // Metodos 
+    public void validarCampos(){
+
     };
 
-    public boolean descricaoEmBrancoException(){
-
-        return descricaoEmBrancoException();
+    public void descricaoEmBrancoException(){
+        
     };
 
-    public boolean valorAcessoInvalido(){
+    public void valorAcessoInvalido(){
 
-        return valorAcessoInvalido();
     };
 
-    public double calcularPreco(int acessoFracao, double valorDescontoHc, boolean  acessoHoraCheia,
-                                boolean  acessoDiurno, boolean  acessoNoturno,
-                                boolean acessoMensalista, double acessoEvento){
-        double preco;
-        if(acessoDiurno == True ){
-            if(hora >= 9){
-                preco = valorEstacionamento;
-            }else {
-                preco = (minuto / 15) * acessoFracao + hora * ((valorDescontoHc / 100) * acessoFracao);
+    public void calcularPreco(){
+    switch(tipoDoAcesso){
+            
+            case 1 -> {
+                // Acesso por hora cheia
+                this.setPrecototal((this.getHoraEntrada()- this.getHoraSaida())*4);
+                }
+            case 2 -> {
+                //Acesso por Diaria Diurna
+
+                }
+            case 3 -> {
+                // Acesso por Diaria Noturna 
+                }
+            case 4 -> {
+                // Acesso Mensalista
             }
-
-        }
-        else if(acessoNoturno == True){
-            //preco = ;
-        }
-
-        return preco;
+            
+            case 5 -> {
+                // Acesso Evento
+            }
+        
     };
-}
+    }}

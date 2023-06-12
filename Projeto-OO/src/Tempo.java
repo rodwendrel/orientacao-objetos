@@ -1,6 +1,3 @@
-import lombok.*;
-@Getter @Setter
-
 public class Tempo {
 
     private int hora, minuto;

@@ -6,9 +6,10 @@ public class Acesso {
     private String placa;
     private int tipoDoAcesso; // Passando os acessos para int
     private double valorAcesso;
-    private int horaEntrada, minutoEntrada, horaSaida, minutoSaida, horatotal, precototal; 
+    private static int horaEntrada, minutoEntrada, horaSaida, minutoSaida; 
     //private  TipoAcesso acessoEspecifico;
     //private Estacionamento acessoEspecificoEstacionamento;
+	private int precototal;
 
     //Métodos Get e Set
 
@@ -16,36 +17,36 @@ public class Acesso {
         return placa;
     }
 
-    public int getHoraEntrada() {
+    public static int getHoraEntrada() {
         return horaEntrada;
     }
 
     public void setHoraEntrada(int horaEntrada) {
-        this.horaEntrada = horaEntrada;
+        Acesso.horaEntrada = horaEntrada;
     }
 
-    public int getMinutoEntrada() {
+    public static int getMinutoEntrada() {
         return minutoEntrada;
     }
 
     public void setMinutoEntrada(int minutoEntrada) {
-        this.minutoEntrada = minutoEntrada;
+        Acesso.minutoEntrada = minutoEntrada;
     }
 
-    public int getHoraSaida() {
+    public static int getHoraSaida() {
         return horaSaida;
     }
 
     public void setHoraSaida(int horaSaida) {
-        this.horaSaida = horaSaida;
+        Acesso.horaSaida = horaSaida;
     }
 
-    public int getMinutoSaida() {
+    public static int getMinutoSaida() {
         return minutoSaida;
     }
 
     public void setMinutoSaida(int minutoSaida) {
-        this.minutoSaida = minutoSaida;
+        Acesso.minutoSaida = minutoSaida;
     }
 
     public int getHoratotal() {
@@ -102,7 +103,7 @@ public class Acesso {
             
             case 1 -> {
                 // Acesso por hora cheia
-                this.setPrecototal((this.getHoraEntrada()- this.getHoraSaida())*4);
+                this.setPrecototal((Acesso.getHoraEntrada()- Acesso.getHoraSaida())*4);
                 }
             case 2 -> {
                 //Acesso por Diaria Diurna

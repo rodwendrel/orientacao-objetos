@@ -30,5 +30,5 @@ particulares de acordo com um cenário modelo apresentado pelo docente.
 Entregas | Descrição | Data
 ---|---|---|
 Entrega 1| Diagrama de Classes UML e Diagrama de Objetos UML usando o Drawio.| 22/05/2023
-Entrega 2| Desenvolvimento do código gerado a partir do UML apresentados na entrega 1.| 12/06/23 
-Entrega 3| Apresentar, sob a forma de um relatório, o padrão MVC em detalhes.| 10/07/23
+Entrega 2| Desenvolvimento do código gerado a partir do UML apresentados na entrega 1.| 05/07/23 
+Entrega 3| Apresentar, sob a forma de um relatório, o padrão MVC em detalhes.| 12/07/23

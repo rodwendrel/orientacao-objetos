@@ -5,6 +5,7 @@ public class Estacionamento {
     private int pocentagemHoraCheia;
     private float valorDiaria;
     private int porcentagemNoturno;
+    
 
     //private float horaCheia;
 

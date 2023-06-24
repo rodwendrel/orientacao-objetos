@@ -1,15 +1,13 @@
 public class Acesso {
 
-
     //Atributos
    // private Estacionamento acessoFracao, valorDescontoHc, valorEstacionamento;
     private String placa;
-    private int tipoDoAcesso; // Passando os acessos para int
+    private int precototal; // Passando os acessos para int
     private double valorAcesso;
-    private static int horaEntrada, minutoEntrada, horaSaida, minutoSaida; 
+    private static int horaEntrada, minutoEntrada, horaSaida, minutoSaida;
     //private  TipoAcesso acessoEspecifico;
     //private Estacionamento acessoEspecificoEstacionamento;
-	private int precototal;
 
     //Métodos Get e Set
 
@@ -86,6 +84,7 @@ public class Acesso {
     }
     
    // Metodos 
+    
     public void validarCampos(){
 
     };
@@ -97,28 +96,9 @@ public class Acesso {
     public void valorAcessoInvalido(){
 
     };
-
-    public void calcularPreco(){
-    switch(tipoDoAcesso){
-            
-            case 1 -> {
-                // Acesso por hora cheia
-                this.setPrecototal((Acesso.getHoraEntrada()- Acesso.getHoraSaida())*4);
-                }
-            case 2 -> {
-                //Acesso por Diaria Diurna
-
-                }
-            case 3 -> {
-                // Acesso por Diaria Noturna 
-                }
-            case 4 -> {
-                // Acesso Mensalista
-            }
-            
-            case 5 -> {
-                // Acesso Evento
-            }
-        
+    
+    void status(){
+		System.out.println("Placa: " + getPlaca());
     };
-    }}
+
+    }

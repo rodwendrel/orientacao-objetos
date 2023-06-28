@@ -1,4 +1,5 @@
-import java.util.NoSuchElementException;
+package Estac;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +10,6 @@ public class Main {
 		 	Scanner ler = new Scanner(System.in);
 		 	int i;
 		 	
-		
 		 	System.out.println("Digite a quantidade máxima do estacionamento: ");
 	        int valorCapacidade = ler.nextInt();
 	        i = e1.validarInt(valorCapacidade);

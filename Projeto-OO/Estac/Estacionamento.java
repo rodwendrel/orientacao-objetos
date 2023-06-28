@@ -1,3 +1,4 @@
+package Estac;
 public class Estacionamento {
 
     private int capacidade;
@@ -75,7 +76,7 @@ public class Estacionamento {
         }
     }
 
-    //funções
+    // funções
     public int validarInt(int numero){
         int i;
         if(numero < 0 || numero == 00 ){

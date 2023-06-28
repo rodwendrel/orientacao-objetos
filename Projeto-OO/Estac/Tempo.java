@@ -1,3 +1,5 @@
+package Estac;
+
 public class Tempo {
 
     private int horaEntrada, horaSaida, minutoEntrada, minutoSaida, HorasTotais, MinutosTotais;

@@ -1,3 +1,5 @@
+package Estac;
+
 public class Acesso {
 
     //Atributos
@@ -5,6 +7,8 @@ public class Acesso {
     private String placa;
     private int precototal; // Passando os acessos para int
     private double valorAcesso;
+	private int tipoDoAcesso;
+	private int horatotal;
     private static int horaEntrada, minutoEntrada, horaSaida, minutoSaida;
     //private  TipoAcesso acessoEspecifico;
     //private Estacionamento acessoEspecificoEstacionamento;

@@ -1,4 +1,4 @@
-
+package recursos;
 
 public class TipoAcesso {
 
@@ -54,5 +54,4 @@ public class TipoAcesso {
 		System.out.println("Tipo de Acesso:  "+ getDescricao());
     };
 }
-
 

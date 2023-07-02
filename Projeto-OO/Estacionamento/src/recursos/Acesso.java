@@ -1,3 +1,5 @@
+package recursos;
+
 
 public class Acesso {
 
@@ -14,6 +16,14 @@ public class Acesso {
 
     //Métodos Get e Set
 
+    public Acesso(String placa, int horaEntrada, int minutoEntrada, int horaSaida, int minutoSaida ) {
+    	this.placa = placa;
+    	Acesso.horaEntrada = horaEntrada; 
+    	Acesso.minutoEntrada = minutoEntrada;
+    	Acesso.horaSaida = horaSaida;
+    	Acesso.minutoSaida = minutoSaida;
+    	
+    }
     public String getPlaca() {
         return placa;
     }

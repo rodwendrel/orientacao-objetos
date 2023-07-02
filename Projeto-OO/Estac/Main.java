@@ -1,8 +1,13 @@
-package Estac;
 
 import java.util.Scanner;
 
 public class Main {
+	
+	public static void main(String[] args) {
+		tiposAcessos();
+		registrarAcesso();
+		
+	}
 	
 	public void registrarEstacionamento() {
 		
@@ -55,14 +60,24 @@ public class Main {
 		Scanner ler = new Scanner(System.in);
 	 	int i;
 		
-		System.out.println("Vamos comecar com seu registro.");
+		System.out.println("Vamos começar com seu registro.");
         
         System.out.println("Digite sua placa:");
         String placa = ler.nextLine();
         a1.setPlaca(placa);
         
-        System.out.println("Digita um número aí pfv!");
+        System.out.println("Digite qual estacionamento deseja: \n" +"1 para Estacionamento 1 \n" + "2 para estacionamento 2 \n" + "3 para estacionamento 2\n");
         int a = ler.nextInt();
+        
+        System.out.println("Digite a hora de entrada:");
+        int entradaH = ler.nextInt();
+        a1.setHoraEntrada(entradaH);
+        
+        System.out.println("Digite o minuto de entrada:");
+        int minutoH = ler.nextInt();
+        a1.setMinutoEntrada(minutoH);
+        
+        
         
         a1.status();
         ler.close();
@@ -76,18 +91,19 @@ public class Main {
 		
 		System.out.println("Digite o tipo de acesso: \n" + "1 - Acesso hora cheia \n" + "2 - Acesso diária diurna \n" + "3 - Acesso diária noturna \n" + "4 - Acesso Mensalista \n" + "5 - Acesso Evento \n");
         int Acesso = ler.nextInt();
-        tp1.setDescricao(Acesso);
+        i = tp1.validarInt(Acesso);
+        tp1.setDescricao(Acesso, i);
         
         tp1.status();
         ler.close();
 	}
 	
-    public static void main(String[] args) {
+   // public static void main(String[] args) {
   
 //        Scanner ler = new Scanner(System.in);
        
 //        tiposAcessos();
-        registrarAcesso();
+		
         
 //        try 
 //        {
@@ -99,5 +115,5 @@ public class Main {
 //        }
         
              
-    }
+    //}
 }

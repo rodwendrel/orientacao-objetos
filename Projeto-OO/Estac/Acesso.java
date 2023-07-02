@@ -1,4 +1,3 @@
-package Estac;
 
 public class Acesso {
 
@@ -101,8 +100,10 @@ public class Acesso {
 
     };
     
+    
     void status(){
 		System.out.println("Placa: " + getPlaca());
+		
     };
 
     }

@@ -1,0 +1,15 @@
+package aula_POO;
+
+public class aula_02 {
+
+	public static void main(String[] args) {
+		Caneta can1 = new Caneta();
+		can1.setModelo("Azul");
+		can1.setPonta(0.7f);
+		///can1.carga = 60;
+		//can1.ponta = 0.7f;
+		#can1.tampa = true;
+		can1.status();
+	}
+
+}

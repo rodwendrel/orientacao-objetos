@@ -1,4 +1,4 @@
-package Estac;
+
 public class Estacionamento {
 
     private int capacidade;

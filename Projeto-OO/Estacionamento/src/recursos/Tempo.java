@@ -1,11 +1,11 @@
 package recursos;
 
-public abstract class Tempo {
+public class Tempo {
 
     protected int HorasTotais, MinutosTotais, horaEntrada, horaSaida, minutoEntrada, minutoSaida;
 
     public int getHoraSaida() {
-		return horaSaida;
+		return this.horaSaida;
 	}
 
   public int getHoraEntrada() {
@@ -36,16 +36,16 @@ public abstract class Tempo {
     	this.minutoSaida = mS;
     }
     
-    public void setMinutosTotaisEstacionamento(int mT) {
+    public void setMinutosTotaisEstacionamento(int minutoSaida, int minutoEntrada) {
     	
-    	mT = ((this.minutoSaida - this.minutoEntrada)/13);
+    	int mT = ((minutoSaida - minutoEntrada)/13);
     	
     	this.MinutosTotais = mT;
     }
     
-    public void setHorasTotaisEstacionamento(int hT) {
+    public void setHorasTotaisEstacionamento(int horaSaida, int horaEntrada) {
     	
-    	hT = this.horaSaida - this.horaEntrada;
+    	int hT = horaSaida - horaEntrada;
     	
     	this.HorasTotais = hT;
     }

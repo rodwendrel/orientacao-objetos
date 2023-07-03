@@ -15,6 +15,8 @@ public class HoraCheia extends Acesso{
         }
         return valorAcesso;
 }
+    
+    
     public void status(){
         System.out.println("O valor a ser pago: R$"+ calcularHoraCheia()); 
     }

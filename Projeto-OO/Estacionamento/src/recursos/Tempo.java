@@ -1,35 +1,38 @@
 package recursos;
 
+public abstract class Tempo {
 
-public class Tempo {
+    protected int HorasTotais, MinutosTotais, horaEntrada, horaSaida, minutoEntrada, minutoSaida;
 
-    private int horaEntrada, horaSaida, minutoEntrada, minutoSaida, HorasTotais, MinutosTotais;
+    public int getHoraSaida() {
+		return horaSaida;
+	}
+
+  public int getHoraEntrada() {
+		return horaEntrada;
+	}
+
+	public int getMinutoEntrada() {
+		return minutoEntrada;
+	}
+
+	public int getMinutoSaida() {
+		return minutoSaida;
+	}
 
     public void setHoraEntradaEstacionamento(int hE){
-    	
-    	hE = Acesso.getHoraEntrada();
-    	
     	this.horaEntrada = hE;
-    };
-    
+    }
+
     public void setHoraSaidaEstacionamento(int hS) {
-    	
-    	hS = Acesso.getHoraSaida();
-    	
     	this.horaSaida = hS;
     }
     
     public void setMinutoEntradaEstacionamento(int mE) {
-    	
-    	mE = Acesso.getMinutoEntrada();
-    	
-    	this.minutoSaida = mE;
+    	this.minutoEntrada = mE;
     }
     
     public void setMinutoSaidaEstacionamento(int mS) {
-    	
-    	mS = Acesso.getMinutoSaida();
-    	
     	this.minutoSaida = mS;
     }
     
@@ -47,8 +50,11 @@ public class Tempo {
     	this.HorasTotais = hT;
     }
     
-    public String getHorasPassadasEstacionamento() {
-    	
-		return null;
+    public int getHorasTotaisEstacionamento() {
+      return HorasTotais;
+    }
+
+     public int getMinutosTotaisEstacionamento() {
+      return this.MinutosTotais;
     }
 }

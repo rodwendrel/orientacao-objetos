@@ -4,119 +4,145 @@ package recursos;
 public class Estacionamento {
 
     private int capacidade;
-    private float  valorFracao;
-    private int porcentagemHoraCheia;
-    private float valorDiaria;
-    private int porcentagemNoturno;
-        
-    private float valorMensalista;
-
-    private float valorEvento;
-    
-    private int porcentagemRetorno;
-
+	private static float valorFracao, valorDiaria, valorMensalista, valorEvento, valorTotal = 0, valorContratante = 0;
+    private static int porcentagemHoraCheia, porcentagemNoturno;
+    private static int porcentagemRetorno;
+    protected Tempo funcionamento = new Tempo();
     
 
 	//private float horaCheia;
-    public Estacionamento(int capacidade, float valorFracao, int porcentagemHoraCheia, int valorDiaria, int porcentagemNoturno , float valorMensalista, float valorEvento, int porcentagemRetorno) {
+    public Estacionamento(int capacidade, float valorFracao, int porcentagemHoraCheia, int valorDiaria, int porcentagemNoturno , float valorMensalista, float valorEvento, int porcentagemRetorno, int horaInicio, int horaFinal) {
         if(validarInt(capacidade) == 1){
             this.capacidade = capacidade;
         }
         if(validarFloat(valorFracao) == 1) {
-            this.valorFracao = valorFracao;
+            Estacionamento.valorFracao = valorFracao;
         }
         if(validarInt(porcentagemHoraCheia) == 1) {
-            this.porcentagemHoraCheia = porcentagemHoraCheia;
+            Estacionamento.porcentagemHoraCheia = porcentagemHoraCheia;
         }
         if(validarFloat(valorDiaria) == 1) {
-            this.valorDiaria = valorDiaria;
+            Estacionamento.valorDiaria = valorDiaria;
         }
         if(validarInt(porcentagemNoturno) == 1) {
-            this.porcentagemNoturno = porcentagemNoturno;
+            Estacionamento.porcentagemNoturno = porcentagemNoturno;
         }
         if(validarFloat(valorMensalista) == 1){
-            this.valorMensalista = valorMensalista;
+            Estacionamento.valorMensalista = valorMensalista;
         }
         if(validarFloat(valorEvento) == 1){
-            this.valorEvento = valorEvento;
+            Estacionamento.valorEvento = valorEvento;
         }
         if(validarInt(porcentagemRetorno)==1) {
         	this.porcentagemRetorno = porcentagemRetorno;
         }
-
+        if(validarInt(horaInicio)==1) {
+        	setHoraEntradaEstacionamento(horaInicio) ;
+        }
+        if(validarInt(horaFinal)==1) {
+        	setHoraSaidaEstacionamento(horaFinal);
+        }
     }
-	public float getPorcentagemRetorno() {
+
+	public static float getPorcentagemRetorno() {
 			return porcentagemRetorno;
 		}
 	
-		public void setPorcentagemRetorno(int porcentagemRetorno) {
-			this.porcentagemRetorno = porcentagemRetorno;
-		}
+	public void setPorcentagemRetorno(int porcentagemRetorno) {
+		Estacionamento.porcentagemRetorno = porcentagemRetorno;
+	}
+
     public int getCapacidade() {
         return capacidade;
     }
+
     public void setCapacidade(int capacidade) {
         if(validarInt(capacidade) == 1){
             this.capacidade = capacidade;
         }
     }
-    public float getValorFracao() {
-        return valorFracao;
+
+    public static float getValorFracao() {
+        return Estacionamento.valorFracao;
     }
+
     public void setValorFracao(float valorFracao) {
-    	
-        if(validarFloat(valorFracao) == 1) {
-            this.valorFracao = valorFracao;
-        }
+        Estacionamento.valorFracao = valorFracao;
     }
-    public int getPorcentagemHoraCheia() {
-        return porcentagemHoraCheia;
+
+    public static int getPorcentagemHoraCheia() {
+        return Estacionamento.porcentagemHoraCheia;
     }
+
     public void setPorcentagemHoraCheia(int porcentagemHoraCheia) {
         if(validarInt(porcentagemHoraCheia) == 1) {
-            this.porcentagemHoraCheia = porcentagemHoraCheia;
+            Estacionamento.porcentagemHoraCheia = porcentagemHoraCheia;
         }
     }
-    public float getValorDiaria() {
-        return valorDiaria;
+
+    public static float getValorDiaria() {
+        return Estacionamento.valorDiaria;
     }
+
     public void setValorDiaria(float valorDiaria) {
         if(validarFloat(valorDiaria) == 1) {
-            this.valorDiaria = valorDiaria;
+            Estacionamento.valorDiaria = valorDiaria;
         }
+    }
 
+    public static int getPorcentagemNoturno() {
+        return Estacionamento.porcentagemNoturno;
     }
-    public int getPorcentagemNoturno() {
-        return porcentagemNoturno;
-    }
+
     public void setPorcentagemNoturno(int porcentagemNoturno) {
         if(validarInt(porcentagemNoturno) == 1) {
-            this.porcentagemNoturno = porcentagemNoturno;
+            Estacionamento.porcentagemNoturno = porcentagemNoturno;
         }
     }
-    public float getValorMensalista() {
-        return valorMensalista;
+
+    public static float getValorMensalista() {
+        return Estacionamento.valorMensalista;
     }
 
-    public void setValorMensalista(float valorMesalista) {
-        if(validarFloat(valorMesalista) == 1){
-            this.valorMensalista = valorMesalista;
-        }
-
-    }
-
-    public float getValorEvento() {
-        return valorEvento;
+    public static float getValorEvento() {
+        return Estacionamento.valorEvento;
     }
 
     public void setValorEvento(float valorEvento) {
         if(validarFloat(valorEvento) == 1){
-            this.valorEvento = valorEvento;
+            Estacionamento.valorEvento = valorEvento;
         }
     }
+    public static float getValorTotal() {
+		return valorTotal;
+	}
+
+	public static void setValorTotal(float valorTotal) {
+		Estacionamento.valorTotal = valorTotal;
+	}
+
+	public static float getValorContratante() {
+		return valorContratante;
+	}
+
+	public static void setValorContratante(float valorContratante) {
+		Estacionamento.valorContratante = valorContratante;
+	}
+
 
     // funções
-    public int validarInt(int numero){
+	public static float caixaEstacionamento(float ganho) {
+		Estacionamento.valorTotal += ganho;
+		return Estacionamento.valorTotal;
+	}
+	
+	public static float retornoEstacionamento(float ganho) {
+		Estacionamento.valorContratante = ganho*(getPorcentagemRetorno()/100);
+		return Estacionamento.valorContratante;
+	}
+	
+	
+    public static int validarInt(int numero){
         int i;
         if(numero < 0 ){
             System.out.println("O campo está em branco ou é inválido");
@@ -126,7 +152,8 @@ public class Estacionamento {
         }
         return i;
     }
-    public int validarFloat(float numero){
+
+    public static int validarFloat(float numero){
         int i;
         if(numero < 0  ){
             System.out.println("O campo está em branco ou é inválido");
@@ -137,24 +164,60 @@ public class Estacionamento {
         return i;
     }
 
-    public float calcularHoraCheia(){
-        float x = 4*this.valorFracao - ((this.porcentagemHoraCheia*4*this.valorFracao)/100);
-        return x;
+  //Tempo
+    
+    public void setHoraEntradaEstacionamento(int hE){
+    	funcionamento.horaEntrada = hE;
     }
 
-    public float calcularDiariaNoturna(){
-        float x = ((this.porcentagemNoturno*this.valorDiaria)/100);
-        return x;
+    public void setHoraSaidaEstacionamento(int hS) {
+    	funcionamento.horaSaida = hS;
     }
+    
+    public void setMinutoEntradaEstacionamento(int mE) {
+    	funcionamento.minutoEntrada = mE;
+    }
+    
+    public void setMinutoSaidaEstacionamento(int mS) {
+    	funcionamento.minutoSaida = mS;
+    }
+    
+    public int getHoraSaida() {
+		return funcionamento.horaSaida;
+	}
 
-    void status(){
-        System.out.println("Status do estacionamento ");
+    public int getHoraEntrada() {
+		return funcionamento.horaEntrada;
+	}
+
+
+	public int getMinutoEntrada() {
+		return funcionamento.minutoEntrada;
+	}
+
+	public int getMinutoSaida() {
+		return funcionamento.minutoSaida;
+	}
+	
+	
+    
+	public void statusCaixa(){
+	        System.out.println("Status do caixa do estacionamento "+ Cadastro.getEstacionamento());
+	        System.out.println("Valor do caixa: R$"+ Estacionamento.caixaEstacionamento(0));
+	        System.out.println("Valor do contratante: R$"+ Estacionamento.retornoEstacionamento(Estacionamento.caixaEstacionamento(0))+"\n");
+	
+	    }
+    
+   public void status(){
+        System.out.println("Status do estacionamento "+Cadastro.getEstacionamento());
         System.out.println("Capacidade máxima: "+ getCapacidade());
         System.out.println("Valor fração: R$ "+ getValorFracao());
-        System.out.println("Valor hora cheia: R$ "+ calcularHoraCheia());
         System.out.println("Valor diária diurna: R$ "+ getValorDiaria());
-        System.out.println("Valor diária noturna: R$ "+ calcularDiariaNoturna());
         System.out.println("Valor do acesso mesalista: R$ "+ getValorMensalista());
-        System.out.println("Valor do acesso evento: R$ "+ getValorEvento()+"\n");
+        System.out.println("Valor do acesso evento: R$ "+ getValorEvento());
+        System.out.println("Valor do caixa: R$"+ Estacionamento.caixaEstacionamento(0));
+        System.out.println("Horário do inicio do funcionamento: "+ getHoraEntrada()+"h");
+        System.out.println("Horário do fim do funcionamento: "+ getHoraSaida()+"h \n");
+
     }
 }

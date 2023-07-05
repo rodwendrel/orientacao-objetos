@@ -1,54 +1,60 @@
 package recursos;
 
-
 public class Tempo {
 
-    private int horaEntrada, horaSaida, minutoEntrada, minutoSaida, HorasTotais, MinutosTotais;
+    protected int HorasTotais, MinutosTotais, horaEntrada, horaSaida, minutoEntrada, minutoSaida;
+
+    public int getHoraSaida() {
+		return this.horaSaida;
+	}
+
+  public int getHoraEntrada() {
+		return horaEntrada;
+	}
+
+	public int getMinutoEntrada() {
+		return minutoEntrada;
+	}
+
+	public int getMinutoSaida() {
+		return minutoSaida;
+	}
 
     public void setHoraEntradaEstacionamento(int hE){
-    	
-    	hE = Acesso.getHoraEntrada();
-    	
     	this.horaEntrada = hE;
-    };
-    
+    }
+
     public void setHoraSaidaEstacionamento(int hS) {
-    	
-    	hS = Acesso.getHoraSaida();
-    	
     	this.horaSaida = hS;
     }
     
     public void setMinutoEntradaEstacionamento(int mE) {
-    	
-    	mE = Acesso.getMinutoEntrada();
-    	
-    	this.minutoSaida = mE;
+    	this.minutoEntrada = mE;
     }
     
     public void setMinutoSaidaEstacionamento(int mS) {
-    	
-    	mS = Acesso.getMinutoSaida();
-    	
     	this.minutoSaida = mS;
     }
     
-    public void setMinutosTotaisEstacionamento(int mT) {
+    public void setMinutosTotaisEstacionamento(int minutoSaida, int minutoEntrada) {
     	
-    	mT = ((this.minutoSaida - this.minutoEntrada)/13);
+    	int mT = ((minutoSaida - minutoEntrada)/13);
     	
     	this.MinutosTotais = mT;
     }
     
-    public void setHorasTotaisEstacionamento(int hT) {
+    public void setHorasTotaisEstacionamento(int horaSaida, int horaEntrada) {
     	
-    	hT = this.horaSaida - this.horaEntrada;
+    	int hT = horaSaida - horaEntrada;
     	
     	this.HorasTotais = hT;
     }
     
-    public String getHorasPassadasEstacionamento() {
-    	
-		return null;
+    public int getHorasTotaisEstacionamento() {
+      return HorasTotais;
+    }
+
+     public int getMinutosTotaisEstacionamento() {
+      return this.MinutosTotais;
     }
 }

@@ -197,6 +197,7 @@ public class Main {
 	
 		// estacionamentoFinal.statusCaixa();
 		//e1.statusCaixa();
+		//Teste
 
 		
 	}

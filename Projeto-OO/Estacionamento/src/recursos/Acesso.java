@@ -2,63 +2,62 @@ package recursos;
 
 public abstract class Acesso{
 
-    //Atributos
+  //Atributos
  
-    protected String placa;
-    protected  int precototal; // Passando os acessos para int
-    protected  double valorAcesso;
-	protected  int horatotal;
-	protected Tempo t = new Tempo(); //relação entre classes
+  protected String placa;
+  protected  int precototal; // Passando os acessos para int
+  protected  double valorAcesso;
+  protected  int horatotal;
+  //relação entre classes
+  protected Tempo t = new Tempo(); 
+  protected Cadastro carro = new Cadastro();
 
-    //Métodos Get e Set
+  //Métodos Get e Set
 
-    public String getPlaca() {
-        return placa;
-    }
 
-    public int getHoratotal() {
-        return horatotal;
-    }
+  public int getHoratotal() {
+      return horatotal;
+  }
 
-    public int getPrecototal() {
-        return precototal;
-    }
+  public int getPrecototal() {
+      return precototal;
+  }
 
-    public void setPrecototal() {
-        
-    }
+  public void setPrecototal() {
+      
+  }
 
-    public double getValorAcesso() {
-        return valorAcesso;
-    }
+  public double getValorAcesso() {
+      return valorAcesso;
+  }
 
-    public void setValorAcesso() {
+  public void setValorAcesso() {
 
-    }
-    //Tempo
- 
-    public void setHoraEntradaEstacionamento(int hE){
-    	t.horaEntrada = hE;
-    }
+  }
 
-    public void setHoraSaidaEstacionamento(int hS) {
-    	t.horaSaida = hS;
-    }
-    
-    public void setMinutoEntradaEstacionamento(int mE) {
-    	t.minutoEntrada = mE;
-    }
-    
-    public void setMinutoSaidaEstacionamento(int mS) {
-    	t.minutoSaida = mS;
-    }
+  //Tempo
+
+  public void setHoraEntradaEstacionamento(int hE){
+    t.horaEntrada = hE;
+  }
+
+  public void setHoraSaidaEstacionamento(int hS) {
+    t.horaSaida = hS;
+  }
+  
+  public void setMinutoEntradaEstacionamento(int mE) {
+    t.minutoEntrada = mE;
+  }
+  
+  public void setMinutoSaidaEstacionamento(int mS) {
+    t.minutoSaida = mS;
+  }
     
     public int getHoraSaida() {
 		return t.horaSaida;
 	}
 
     public int getHoraEntrada() {
-	    System.out.println("Placa: ");
 		return t.horaEntrada;
 	}
 
@@ -71,44 +70,47 @@ public abstract class Acesso{
 		return t.minutoSaida;
 	}
 	
-    public void setMinutosTotaisEstacionamento(int mT) {
-    	
-    	mT = ((t.minutoSaida - t.minutoEntrada)/13);
-    	
-    	t.MinutosTotais = mT;
-    }
+  public void setMinutosTotaisEstacionamento(int mT) {
     
-    public void setHorasTotaisEstacionamento(int hT) {
-    	
-    	hT = t.horaSaida - t.horaEntrada;
-    	
-    	t.HorasTotais = hT;
-    }
+    mT = ((t.minutoSaida - t.minutoEntrada)/13);
     
-    public int getHorasTotaisEstacionamento() {
-      return t.HorasTotais;
-    }
-
-     public int getMinutosTotaisEstacionamento() {
-      return t.MinutosTotais;
-    }
+    t.MinutosTotais = mT;
+  }
+  
+  public void setHorasTotaisEstacionamento(int hT) {
     
-   // Metodos 
+    hT = t.horaSaida - t.horaEntrada;
     
-    public void validarCampos(){
+    t.HorasTotais = hT;
+  }
+  
+  public int getHorasTotaisEstacionamento() {
+    return t.HorasTotais;
+  }
 
-    };
-
-    public void descricaoEmBrancoException(){
-        
-    };
-
-    public void valorAcessoInvalido(){
-
-    };
-    
-    void status(){
-		System.out.println("Placa: " + getPlaca());
-		
-    };
+    public int getMinutosTotaisEstacionamento() {
+    return t.MinutosTotais;
+  }
+  
+  // Cadastro
+	public String getPlaca() {
+		return carro.Placa;
+	}
+	public void setPlaca(String placa) {
+		carro.Placa = placa;
+	}
+	public int getEstacionamento() {
+		return carro.Estacionamento;
+	}
+	public void setEstacionamento(int estacionamento) {
+		carro.Estacionamento = estacionamento;
+	}
+  
+  
+  
+  
+  void status(){
+  System.out.println("Placa: " + getPlaca());
+  
+  };
 }

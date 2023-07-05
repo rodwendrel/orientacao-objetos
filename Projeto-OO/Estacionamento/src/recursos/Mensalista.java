@@ -1,13 +1,22 @@
 package recursos;
 
 public class Mensalista extends Acesso{
+	
+    public float calcularPrecoMensal() {
 
-    private float valorFixo;
+        float ValorMensal = Estacionamento.getValorMensalista() / 13;
+        Estacionamento.caixaEstacionamento(ValorMensal);
 
-    public void setValorMensalista(float valorMensalista) {
-        if(Estacionamento.validarFloat(valorMensalista) == 1){
-           // Estacionamento.getValorMensalista() = valorMensalista;
-        }
+        return ValorMensal;
     }
     
+    public void status(){
+    	System.out.println("Resumo do Acesso Mensalista");
+    	System.out.println("Placa do carro " + Cadastro.getPlaca());
+    	System.out.println("Horário de entrada: "+ getHoraEntrada()+":"+getMinutoEntrada());
+        System.out.println("Horário de saída:  "+ getHoraSaida()+":" + getMinutoSaida());
+        System.out.println("O valor a ser pago mensalmente é: R$" + calcularPrecoMensal() +"\n");
+    }
+
+    // O QUE DIACHO É ESSE ACESSO IRRESTRISTO?
 }

@@ -11,6 +11,7 @@ public class Noturno extends Acesso{
         if(value == 1){
             resultado= ((Estacionamento.getPorcentagemNoturno()*Estacionamento.getValorDiaria())/100);
         }
+        Estacionamento.caixaEstacionamento(resultado);
         return resultado;
     }
     
@@ -39,7 +40,11 @@ public class Noturno extends Acesso{
         return validacao;
     }
     public void status(){
-        System.out.println("O valor a ser pago: R$"+ calcularAcessoNoturno());
+    	System.out.println("Resumo do Acesso Noturno");
+    	System.out.println("Placa do carro " + getPlaca());
+    	System.out.println("Horário de entrada: "+ getHoraEntrada()+":"+getMinutoEntrada());
+        System.out.println("Horário de saída:  "+ getHoraSaida()+":" + getMinutoSaida());
+        System.out.println("O valor a ser pago do carro: R$ "+ calcularAcessoNoturno()+ "\n");
 
 
         

@@ -13,12 +13,17 @@ public class HoraCheia extends Acesso{
         else {
             System.out.println("valor invalido");
         }
+        Estacionamento.caixaEstacionamento(valorAcesso);
         return valorAcesso;
 }
     
     
     public void status(){
-        System.out.println("O valor a ser pago: R$"+ calcularHoraCheia()); 
+    	System.out.println("Resumo do Acesso");
+    	System.out.println("Placa do carro " + Cadastro.getPlaca());
+    	System.out.println("Horário de entrada: "+ getHoraEntrada()+":"+getMinutoEntrada());
+        System.out.println("Horário de saída:  "+ getHoraSaida()+":" + getMinutoSaida());
+        System.out.println("O valor a ser pago: R$"+ calcularHoraCheia()+"\n"); 
     }
 
 }

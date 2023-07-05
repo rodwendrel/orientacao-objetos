@@ -10,16 +10,15 @@ public class Main {
 		//Obtendo o número de estacionamentos a serem criados
 		System.out.print("===================================================\n \n \n");
 		System.out.print("Digite o número de estacionamentos a serem criados:");
-		System.out.print("\n \n \n===================================================");
+		System.out.print("\n \n \n===================================================\n");
 		int numEstacionamentos = scanner.nextInt();
-		
 
 		//Hora de criar uma array para armazenar os estacionamentos:
 		Estacionamento[] estacionamentos = new Estacionamento[numEstacionamentos];
 
 		// Inserir sobre o número de estacionamentos e permitindo que o usuário insira os dados para cada um:
 		for (int i = 0; i < numEstacionamentos; i++){
-			System.out.print("===================================================\n \n \n");
+			System.out.print("===================================================\n\n\n");
 			System.out.println("Estacionamento " + (i + 1));
 
 			//Obtendo os dados do estacionamento
@@ -30,7 +29,7 @@ public class Main {
 			System.out.print("\033[H\033[2J");
 			System.out.flush();
 
-			System.out.print("===================================================\n \n \n");
+			System.out.print("===================================================\n\n\n");
 			System.out.println("Estacionamento " + (i + 1));
 
 			System.out.println("Qual será o valor fração do acesso?");
@@ -117,14 +116,16 @@ public class Main {
 
 			//Hora de armazenar o estacionamento no array:
 			estacionamentos[i] = estacionamento;
-
-			//Hora de exibir o status de cada estacionamento:
-			for (int u = 1; u < numEstacionamentos; u++){
-				Estacionamento estacionamentoFinal = estacionamentos[i];
-				System.out.println("Status do Estacionamento " + (i + i));
-				estacionamentoFinal.status();
-				System.out.println();
 			}
+		
+		System.out.print("===================================================\n \n \n");
+		
+		//Hora de exibir o status de cada estacionamento:
+		for (int i = 0; i < numEstacionamentos; i++){
+			Estacionamento estacionamentoFinal = estacionamentos[i];
+			System.out.println("Status do Estacionamento " + (i + i));
+			estacionamentoFinal.status();
+			System.out.println();
 		}
 		
 	}
@@ -200,5 +201,3 @@ public class Main {
 		
 	}
 }
-	
-				

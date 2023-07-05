@@ -1,15 +1,47 @@
 package recursos;
-
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
 	
 	public static void main(String[] args) {
+		
+		
+		
 		//Testes dos estacionamentos
 		Estacionamento1();
 		Estacionamento2();
 		Estacionamento3();
 		
+		Estacionamento e1 = new Estacionamento(300,30, 15 , 120 , 45, 600, 50, 50, 06, 22);
+		Estacionamento e2 = new Estacionamento(120, 20, 10 , 70 , 30, 455, 60, 60, 0, 24);
+		Estacionamento e4 = new Estacionamento(140, 20, 30 , 70 , 30, 455, 60, 60, 0, 22);
+		
+		ArrayList<Estacionamento> estacionamento = new ArrayList();
+		estacionamento.add(e1);
+		estacionamento.add(e2);
+		estacionamento.add(e4);
+
+	    System.out.printf("Percorrendo o ArrayList (usando o índice)\n");
+	    int n = estacionamento.size();
+	    for (int i=0; i<n; i++) {
+	    	estacionamento.get(i).status();
+	    }
+	    try {
+	    	
+	    	estacionamento.remove(e2);
+	      } catch (IndexOutOfBoundsException e) {
+	          System.out.printf("\nErro: posição inválida (%s).",
+	            e.getMessage());
+	      }
+	    int n1 = estacionamento.size();
+	    for (int i=0; i<n1; i++) {
+	    	estacionamento.get(i).status();
+	    }
+
+	}
+	static void usandoScanner() {
 		
 		Scanner scanner = new Scanner(System.in);
 
@@ -21,7 +53,7 @@ public class Main {
 
 		//Hora de criar uma array para armazenar os estacionamentos:
 		Estacionamento[] estacionamentos = new Estacionamento[numEstacionamentos];
-
+		
 		// Inserir sobre o número de estacionamentos e permitindo que o usuário insira os dados para cada um:
 		for (int i = 0; i < numEstacionamentos; i++){
 			System.out.print("===================================================\n\n\n");
@@ -118,10 +150,10 @@ public class Main {
 			int horaFecha = scanner.nextInt();
 
 			//Criando o objeto Estacionamento com os dados inseridos:
-			Estacionamento estacionamento = new Estacionamento(capTotal, valFrac, porcentHC, valDiaria, porcentNot, valMensalista, valEvento, porcentRetorno, horaInicio, horaFecha);
+			Estacionamento estacionamente = new Estacionamento(capTotal, valFrac, porcentHC, valDiaria, porcentNot, valMensalista, valEvento, porcentRetorno, horaInicio, horaFecha);
 
 			//Hora de armazenar o estacionamento no array:
-			estacionamentos[i] = estacionamento;
+			estacionamentos[i] = estacionamente;
 			}
 		
 		System.out.print("===================================================\n \n \n");
@@ -135,6 +167,7 @@ public class Main {
 		}
 		scanner.close();
 		
+	
 	}
 	static void Estacionamento1(){
 		//Cadastrando

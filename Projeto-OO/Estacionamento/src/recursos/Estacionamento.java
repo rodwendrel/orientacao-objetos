@@ -202,14 +202,14 @@ public class Estacionamento {
 	
     
 	public void statusCaixa(){
-	        System.out.println("Status do caixa do estacionamento ");
+	        System.out.println("Status do caixa do estacionamento "+ Cadastro.getEstacionamento());
 	        System.out.println("Valor do caixa: R$"+ Estacionamento.caixaEstacionamento(0));
-	        System.out.println("Valor do contratante: R$"+ Estacionamento.retornoEstacionamento(Estacionamento.caixaEstacionamento(0)));
+	        System.out.println("Valor do contratante: R$"+ Estacionamento.retornoEstacionamento(Estacionamento.caixaEstacionamento(0))+"\n");
 	
 	    }
     
    public void status(){
-        System.out.println("Status do estacionamento ");
+        System.out.println("Status do estacionamento "+Cadastro.getEstacionamento());
         System.out.println("Capacidade máxima: "+ getCapacidade());
         System.out.println("Valor fração: R$ "+ getValorFracao());
         System.out.println("Valor diária diurna: R$ "+ getValorDiaria());

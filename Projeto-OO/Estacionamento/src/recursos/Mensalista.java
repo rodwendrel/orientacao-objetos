@@ -4,7 +4,7 @@ public class Mensalista extends Acesso{
 	
     public float calcularPrecoMensal() {
 
-        float ValorMensal = Estacionamento.getValorMensalista() / 13;
+        float ValorMensal = Estacionamento.getValorMensalista();
         Estacionamento.caixaEstacionamento(ValorMensal);
 
         return ValorMensal;
@@ -18,5 +18,4 @@ public class Mensalista extends Acesso{
         System.out.println("O valor a ser pago mensalmente é: R$" + calcularPrecoMensal() +"\n");
     }
 
-    // O QUE DIACHO É ESSE ACESSO IRRESTRISTO?
 }

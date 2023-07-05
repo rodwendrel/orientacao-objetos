@@ -7,8 +7,9 @@ public class HoraCheia extends Acesso{
         float valorAcesso = 0;
        // System.out.println("Fração "+ getHoraEntrada()); 
         int horaTotal = getHoraSaida()-getHoraEntrada();
+        int minuto = getMinutoSaida() - getMinutoEntrada();
 
-        if(getMinutoEntrada() == 0 && getMinutoSaida() == 0){
+        if(minuto == 0){
         valorAcesso = ((Estacionamento.getValorFracao()*4*horaTotal) - ((Estacionamento.getPorcentagemHoraCheia()*4*Estacionamento.getValorFracao()*horaTotal)/100)) ;}
         else {
             System.out.println("valor invalido");
@@ -19,7 +20,7 @@ public class HoraCheia extends Acesso{
     
     
     public void status(){
-    	System.out.println("Resumo do Acesso");
+    	System.out.println("Resumo do Acesso Hora Cheia");
     	System.out.println("Placa do carro " + Cadastro.getPlaca());
     	System.out.println("Horário de entrada: "+ getHoraEntrada()+":"+getMinutoEntrada());
         System.out.println("Horário de saída:  "+ getHoraSaida()+":" + getMinutoSaida());

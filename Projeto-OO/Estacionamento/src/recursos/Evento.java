@@ -21,7 +21,7 @@ private String nomeEvento;
     	System.out.println("Placa do carro " + Cadastro.getPlaca());
     	System.out.println("Horário de entrada: "+ getHoraEntrada()+":"+getMinutoEntrada());
         System.out.println("Horário de saída:  "+ getHoraSaida()+":" + getMinutoSaida());
-        System.out.println("O valor a ser pago: R$"+ calcularEvento());
+        System.out.println("O valor a ser pago: R$"+ calcularEvento()+"\n");
         
     }
 }

@@ -8,9 +8,10 @@ public abstract class Acesso{
   protected  int precototal; // Passando os acessos para int
   protected  double valorAcesso;
   protected  int horatotal;
+  protected String Placa;
   //relação entre classes
   protected Tempo t = new Tempo(); 
-  protected Cadastro carro = new Cadastro();
+ // protected Cadastro carro = new Cadastro();
 
   //Métodos Get e Set
 
@@ -34,6 +35,12 @@ public abstract class Acesso{
   public void setValorAcesso() {
 
   }
+	public String getPlaca() {
+		return Placa;
+	}
+	public void setPlaca(String placa) {
+		this.Placa = placa;
+	}
 
   //Tempo
 
@@ -91,22 +98,7 @@ public abstract class Acesso{
     public int getMinutosTotaisEstacionamento() {
     return t.MinutosTotais;
   }
-  
-  // Cadastro
-	public String getPlaca() {
-		return carro.Placa;
-	}
-	public void setPlaca(String placa) {
-		carro.Placa = placa;
-	}
-	public int getEstacionamento() {
-		return carro.Estacionamento;
-	}
-	public void setEstacionamento(int estacionamento) {
-		carro.Estacionamento = estacionamento;
-	}
-  
-  
+
   
   
   void status(){

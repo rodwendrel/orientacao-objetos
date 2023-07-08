@@ -5,7 +5,6 @@ public class HoraCheia extends Acesso{
     //metodo
     public float calcularHoraCheia(){
         float valorAcesso = 0;
-       // System.out.println("Fração "+ getHoraEntrada()); 
         int horaTotal = getHoraSaida()-getHoraEntrada();
         int minuto = getMinutoSaida() - getMinutoEntrada();
 
@@ -21,7 +20,7 @@ public class HoraCheia extends Acesso{
     
     public void status(){
     	System.out.println("Resumo do Acesso Hora Cheia");
-    	System.out.println("Placa do carro " + Cadastro.getPlaca());
+    	System.out.println("Placa do carro " + getPlaca());
     	System.out.println("Horário de entrada: "+ getHoraEntrada()+":"+getMinutoEntrada());
         System.out.println("Horário de saída:  "+ getHoraSaida()+":" + getMinutoSaida());
         System.out.println("O valor a ser pago: R$"+ calcularHoraCheia()+"\n"); 

@@ -4,27 +4,29 @@ import java.util.ArrayList;
 public class Main {
 	
 	static ArrayList<Estacionamento> estacionamento = new ArrayList<>();
+	static ArrayList<Cadastro> cadastro = new ArrayList<>();
 	
 	public static void main(String[] args) {
 		
-		ArrayList<Cadastro> cadastro = new ArrayList<>();
 		
 		//Testes dos estacionamentos
-		Estacionamento1(cadastro);
-		Estacionamento2(cadastro);
-		Estacionamento3(cadastro);
+		Estacionamento1();
+		Estacionamento2();
+		Estacionamento3();
 
 		 System.out.println("=== Cadastros dos Carros ===");
-	        for (Cadastro c : cadastro) {
-	            c.status();
-	            System.out.println();
+		 int quant = cadastro.size();
+	     for (int i=0; i<quant; i++) {
+	    	 cadastro.get(i).status();
+	         System.out.println();
 	        }
-	   try { 	
+	     try { 	
 		   cadastro.remove(2);
 	      } catch (IndexOutOfBoundsException e) {
 	          System.out.printf("\nErro: posição inválida (%s).",
 	           e.getMessage());
 	     }
+	     System.out.println("Após remover: \n");
 	    	int u1 = cadastro.size();
 	    	for (int i=0; i<u1; i++) {
 	    		cadastro.get(i).status();
@@ -33,8 +35,10 @@ public class Main {
 	   
 		System.out.printf("Percorrendo o ArrayList (usando o índice)\n");
 	    int n = estacionamento.size();
+	    int number = 1;
 	    for (int i=0; i<n; i++) {
 	    	estacionamento.get(i).status();
+	    	number++;
 	    }
 	    try {
 	    	
@@ -43,46 +47,42 @@ public class Main {
 	          System.out.printf("\nErro: posição inválida (%s).",
 	            e.getMessage());
 	      }
-	    int n1 = estacionamento.size();
+	   int n1 = estacionamento.size();
+	   number =1;
+	   System.out.println("Após remover: \n");
 	    for (int i=0; i<n1; i++) {
+	    	System.out.println("Estacionamento "+number);
 	    	estacionamento.get(i).status();
+	    	number++;
 	    }
 	}
 	
-	static void Estacionamento1(ArrayList<Cadastro> cadastro){
+	static void Estacionamento1(){
 
 		//Cadastrando
-		Cadastro c1 = new Cadastro();
-		c1.setPlaca("POOP-2023");
-		c1.setEstacionamento(1);
-		c1.status();
-		
-		Cadastro c2 = new Cadastro();
-		c2.setPlaca("JAVA-2021");
-		c2.setEstacionamento(1);
-		c2.status();
-		
-		Cadastro c3 = new Cadastro();
-		c3.setPlaca("JJUU-3699");
-		c3.setEstacionamento(1);
-		c3.status();
-		
-		//Exemplo do GitHub
-		Cadastro c4 = new Cadastro();
-		c4.setPlaca("AC50M");
-		c4.setEstacionamento(1);
-		c4.status();
-		
-		Cadastro c5 = new Cadastro();
-		c5.setPlaca("RM3A9");
-		c5.setEstacionamento(1);
-		c5.status();
-		
+		Cadastro c1 = new Cadastro("POOP-2023", 1);
+
 		cadastro.add(c1);
+		
+		Cadastro c2 = new Cadastro("JAVA-2021", 1);
+		cadastro.add(c2);
+		
+		Cadastro c3 = new Cadastro("JJUU-3698", 1);
+		cadastro.add(c3);
+		//Exemplo do GitHub
+		Cadastro c4 = new Cadastro("AC50M", 1);
+		cadastro.add(c4);
+		
+		Cadastro c5 = new Cadastro("RM3A9", 1);
+		cadastro.add(c5);
+
+		
+		
 		cadastro.add(c2);
 		cadastro.add(c3);
-		cadastro.add(c4);
-		cadastro.add(c5);
+	//	cadastro.add(c4);
+		//cadastro.add(c5);
+		//cadastro.get(0).status();
 		
 		System.out.print("===================================================\n \n \n");
 		
@@ -102,7 +102,7 @@ public class Main {
 		a1.status();
 		
 		Fracao a2 = new Fracao();
-		a2.setPlaca("JJUU-3699");
+		a2.setPlaca("JJUU-3698");
 		a2.setHoraEntradaEstacionamento(14);
 		a2.setMinutoEntradaEstacionamento(12);
 		a2.setHoraSaidaEstacionamento(16);
@@ -126,7 +126,7 @@ public class Main {
 		a4.status();
 		
 		Evento a5 = new Evento();
-		a5.setPlaca("JJUU-3699");
+		a5.setPlaca("JJUU-3698");
 		a5.setNomeEvento("Aniversário Bibia");
 		a5.setHoraEntradaEstacionamento(14);
 		a5.setMinutoEntradaEstacionamento(0);
@@ -135,7 +135,7 @@ public class Main {
 		a5.status();
 		
 		HoraCheia a6 = new HoraCheia();
-		a6.setPlaca("JJUU-3699");
+		a6.setPlaca("JJUU-3698");
 		a6.setHoraEntradaEstacionamento(14);
 		a6.setMinutoEntradaEstacionamento(0);
 		a6.setHoraSaidaEstacionamento(16);
@@ -148,40 +148,29 @@ public class Main {
 		System.out.print("===================================================\n \n \n");
 	}
 	
-static void Estacionamento2(ArrayList<Cadastro> cadastro){
+static void Estacionamento2(){
+	
+
 	//Cadastrando
-	Cadastro c1 = new Cadastro();
-	c1.setPlaca("POOP-2023");
-	c1.setEstacionamento(2);
-	c1.status();
+	Cadastro c1 = new Cadastro("POOP-2023", 2);
+
+	cadastro.add(c1);
 	
-	Cadastro c2 = new Cadastro();
-	c2.setPlaca("JAVA-2021");
-	c2.setEstacionamento(2);
-	c2.status();
+	Cadastro c2 = new Cadastro("JAVA-2021", 2);
+	cadastro.add(c2);
 	
-	Cadastro c3 = new Cadastro();
-	c3.setPlaca("JJUU-3699");
-	c3.setEstacionamento(2);
-	c3.status();
+	Cadastro c3 = new Cadastro("JJUU-3698", 2);
+	cadastro.add(c3);
 	
 	//Exemplo do GitHub
-	Cadastro c4 = new Cadastro();
-	c4.setPlaca("HI139");
-	c4.setEstacionamento(2);
-	c4.status();
+	Cadastro c4 = new Cadastro("HI139", 2);
+	cadastro.add(c4);
 	
-	Cadastro c5 = new Cadastro();
-	c5.setPlaca("AC50M");
-	c5.setEstacionamento(2);
-	c5.status();
+	Cadastro c5 = new Cadastro("AC50M", 2);
+	cadastro.add(c5);
+	
+	
 
-		cadastro.add(c1);
-		cadastro.add(c2);
-		cadastro.add(c3);
-		cadastro.add(c4);
-		cadastro.add(c5);
-	
 	System.out.print("===================================================\n \n \n");
 	
 	//Incicioanliznado o estacionamento 2
@@ -246,26 +235,19 @@ static void Estacionamento2(ArrayList<Cadastro> cadastro){
 	e2.statusCaixa();
 	System.out.print("===================================================\n \n \n");
 }
-	static void Estacionamento3(ArrayList<Cadastro> cadastro){
+	static void Estacionamento3(){
+
 		//Cadastrando
-		Cadastro c1 = new Cadastro();
-		c1.setPlaca("POOP-2023");
-		c1.setEstacionamento(3);
-		c1.status();
-		
-		Cadastro c2 = new Cadastro();
-		c2.setPlaca("JAVA-2021");
-		c2.setEstacionamento(3);
-		c2.status();
-		
-		Cadastro c3 = new Cadastro();
-		c3.setPlaca("JJUU-3699");
-		c3.setEstacionamento(3);
-		c3.status();
+		Cadastro c1 = new Cadastro("POOP-2023", 3);
 
 		cadastro.add(c1);
+		
+		Cadastro c2 = new Cadastro("JAVA-2021", 3);
 		cadastro.add(c2);
+		
+		Cadastro c3 = new Cadastro("JJUU-3698", 3);
 		cadastro.add(c3);
+		
 		
 		System.out.print("===================================================\n \n \n");
 		

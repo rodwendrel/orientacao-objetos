@@ -19,29 +19,23 @@ public class Main {
 	            c.status();
 	            System.out.println();
 	        }
-	   // try {
-	    	
-	    //	cadastro.remove(2);
-	     // } catch (IndexOutOfBoundsException e) {
-	       //   System.out.printf("\nErro: posição inválida (%s).",
-	         //   e.getMessage());
-	      //}
-	    //int u1 = cadastro.size();
-	    //for (int i=0; i<u1; i++) {
-	    //	cadastro.get(i).status();
-	    //}
+	   try { 	
+		   cadastro.remove(2);
+	      } catch (IndexOutOfBoundsException e) {
+	          System.out.printf("\nErro: posição inválida (%s).",
+	           e.getMessage());
+	     }
+	    	int u1 = cadastro.size();
+	    	for (int i=0; i<u1; i++) {
+	    		cadastro.get(i).status();
+	    }
 	 // =====================================================
-//		
-//		System.out.printf("Percorrendo o ArrayList (usando o índice)\n");
-//	    int n = estacionamento.size();
-//	    for (int i=0; i<n; i++) {
-//	    	estacionamento.get(i).status();
-//	    }
-        System.out.println("=== Estacionamentos ===");
-        for (Estacionamento e : estacionamento) {
-            e.status();
-            System.out.println();
-        }
+	   
+		System.out.printf("Percorrendo o ArrayList (usando o índice)\n");
+	    int n = estacionamento.size();
+	    for (int i=0; i<n; i++) {
+	    	estacionamento.get(i).status();
+	    }
 	    try {
 	    	
 	    	estacionamento.remove(2);
@@ -61,33 +55,34 @@ public class Main {
 		Cadastro c1 = new Cadastro();
 		c1.setPlaca("POOP-2023");
 		c1.setEstacionamento(1);
+		c1.status();
 		
 		Cadastro c2 = new Cadastro();
 		c2.setPlaca("JAVA-2021");
 		c2.setEstacionamento(1);
+		c2.status();
 		
 		Cadastro c3 = new Cadastro();
 		c3.setPlaca("JJUU-3699");
 		c3.setEstacionamento(1);
+		c3.status();
 		
 		//Exemplo do GitHub
 		Cadastro c4 = new Cadastro();
 		c4.setPlaca("AC50M");
 		c4.setEstacionamento(1);
+		c4.status();
 		
 		Cadastro c5 = new Cadastro();
 		c5.setPlaca("RM3A9");
 		c5.setEstacionamento(1);
-
+		c5.status();
+		
 		cadastro.add(c1);
 		cadastro.add(c2);
 		cadastro.add(c3);
 		cadastro.add(c4);
 		cadastro.add(c5);
-		System.out.println("A LISTAAAAA");
-		System.out.println(c1);
-		System.out.println("CABOU");
-	
 		
 		System.out.print("===================================================\n \n \n");
 		
@@ -158,32 +153,34 @@ static void Estacionamento2(ArrayList<Cadastro> cadastro){
 	Cadastro c1 = new Cadastro();
 	c1.setPlaca("POOP-2023");
 	c1.setEstacionamento(2);
+	c1.status();
 	
 	Cadastro c2 = new Cadastro();
 	c2.setPlaca("JAVA-2021");
 	c2.setEstacionamento(2);
+	c2.status();
 	
 	Cadastro c3 = new Cadastro();
 	c3.setPlaca("JJUU-3699");
 	c3.setEstacionamento(2);
+	c3.status();
 	
 	//Exemplo do GitHub
 	Cadastro c4 = new Cadastro();
 	c4.setPlaca("HI139");
 	c4.setEstacionamento(2);
+	c4.status();
 	
 	Cadastro c5 = new Cadastro();
 	c5.setPlaca("AC50M");
 	c5.setEstacionamento(2);
+	c5.status();
 
 		cadastro.add(c1);
 		cadastro.add(c2);
 		cadastro.add(c3);
 		cadastro.add(c4);
 		cadastro.add(c5);
-		System.out.println("A LISTAAAAA");
-		System.out.println(c1);
-		System.out.println("CABOU");
 	
 	System.out.print("===================================================\n \n \n");
 	
@@ -254,14 +251,17 @@ static void Estacionamento2(ArrayList<Cadastro> cadastro){
 		Cadastro c1 = new Cadastro();
 		c1.setPlaca("POOP-2023");
 		c1.setEstacionamento(3);
+		c1.status();
 		
 		Cadastro c2 = new Cadastro();
 		c2.setPlaca("JAVA-2021");
 		c2.setEstacionamento(3);
+		c2.status();
 		
 		Cadastro c3 = new Cadastro();
 		c3.setPlaca("JJUU-3699");
 		c3.setEstacionamento(3);
+		c3.status();
 
 		cadastro.add(c1);
 		cadastro.add(c2);

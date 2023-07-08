@@ -1,20 +1,25 @@
 package recursos;
 
 public class Cadastro {
-	protected static String Placa;
-	protected static int Estacionamento;
+	protected  String Placa;
+	protected int Estacionamento;
 	
-	public static String getPlaca() {
+	public Cadastro(String placa, int estacionamento) {
+		this.Placa = placa;
+		this.Estacionamento = estacionamento;
+	}
+	
+	public  String getPlaca() {
 		return Placa;
 	}
 	public void setPlaca(String placa) {
-		Cadastro.Placa = placa;
+		this.Placa = placa;
 	}
-	public static int  getEstacionamento() {
+	public  int  getEstacionamento() {
 		return Estacionamento;
 	}
 	public void setEstacionamento(int estacionamento) {
-		Cadastro.Estacionamento = estacionamento;
+		this.Estacionamento = estacionamento;
 	}
 	
 	public void status() {

@@ -153,15 +153,22 @@ public class Estacionamento {
         return i;
     }
 
-    public static int validarFloat(float numero){
-        int i;
-        if(numero < 0  ){
-            System.out.println("O campo está em branco ou é inválido");
-            i = 0;
+    public static void validarDescricao(String frase) throws DescricaoEmBrancoException{
+       try{
+        if(frase.isEmpty()){
+            throw new DescricaoEmBrancoException();
+            //System.out.println("O campo está em branco ou é inválido");   
         }else{
-            i = 1;
+            
         }
-        return i;
+    }
+    }
+
+    public static int validarFloat(float numero) throws DescricaoEmBrancoException{
+        String numero2 = Float.toString(numero);
+        try{
+        if(numero2.isEmpty()){
+            throw new DescricaoEmBrancoException();}
     }
 
   //Tempo

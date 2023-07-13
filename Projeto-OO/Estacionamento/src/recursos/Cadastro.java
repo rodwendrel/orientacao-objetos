@@ -27,5 +27,21 @@ public class Cadastro {
 	    System.out.println("Placa do carro " + getPlaca());
 	    System.out.println("Estacionamento cadastrado: "+ getEstacionamento()+"\n");
 	}
+
+    /**
+     * @param frase
+     * @throws DescricaoEmBrancoException
+     */
+    public static void validarDescricao(String frase) throws DescricaoEmBrancoException{
+		try{
+		 if(frase.isEmpty()){
+			 throw new DescricaoEmBrancoException();
+			 //System.out.println("O campo está em branco ou é inválido");   
+		 }
+		}catch(){
+
+		 }
+	 }
+ 
 	
 }

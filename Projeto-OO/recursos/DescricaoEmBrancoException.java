@@ -2,11 +2,8 @@ package recursos;
 
 public class DescricaoEmBrancoException extends Exception {
 
-public String mensagem;
-
-DescricaoEmBrancoException(){
-        this.mensagem = "A Descrição está em branco.";
+public DescricaoEmBrancoException(){
+        super("A descrição não pode estar em branco");
+}
 }
 
-
-}

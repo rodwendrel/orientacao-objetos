@@ -3,44 +3,122 @@ package recursos;
 
 public class Estacionamento {
 
-    private int capacidade;
+    private int capacidade, numEstacionamento;
 	private static float valorFracao, valorDiaria, valorMensalista, valorEvento, valorTotal = 0, valorContratante = 0;
     private static int porcentagemHoraCheia, porcentagemNoturno;
     private static int porcentagemRetorno;
     protected Tempo funcionamento = new Tempo();
-    
 
 	//private float horaCheia;
-    public Estacionamento(int capacidade, float valorFracao, int porcentagemHoraCheia, int valorDiaria, int porcentagemNoturno , float valorMensalista, float valorEvento, int porcentagemRetorno, int horaInicio, int horaFinal) {
-        if(validarInt(capacidade) == 1){
-            this.capacidade = capacidade;
+    public Estacionamento(String numEstacionamento,String capacidade, String valorFracao, String porcentagemHoraCheia, String valorDiaria, String porcentagemNoturno , String valorMensalista, String valorEvento, String porcentagemRetorno, String horaInicio, String horaFinal) throws DescricaoEmBrancoException, ValorAcessoInvalidoException {
+        
+        //Verificação da parte da numeração do Estacionamento
+        if(numEstacionamento.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(numEstacionamento) < 0){
+            throw new ValorAcessoInvalidoException();
         }
-        if(validarFloat(valorFracao) == 1) {
-            Estacionamento.valorFracao = valorFracao;
+            else {
+            this.numEstacionamento = Integer.valueOf(numEstacionamento);
         }
-        if(validarInt(porcentagemHoraCheia) == 1) {
-            Estacionamento.porcentagemHoraCheia = porcentagemHoraCheia;
+        
+        //Verificação da parte da capacidade
+        if(capacidade.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(capacidade) < 0){
+            throw new ValorAcessoInvalidoException();
         }
-        if(validarFloat(valorDiaria) == 1) {
-            Estacionamento.valorDiaria = valorDiaria;
+            else {
+            this.capacidade = Integer.valueOf(capacidade);
         }
-        if(validarInt(porcentagemNoturno) == 1) {
-            Estacionamento.porcentagemNoturno = porcentagemNoturno;
+        
+        //Verificação da parte de valorFracao
+        if(valorFracao.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(valorFracao).floatValue() < 0){
+            throw new ValorAcessoInvalidoException();
         }
-        if(validarFloat(valorMensalista) == 1){
-            Estacionamento.valorMensalista = valorMensalista;
+            else {
+            Estacionamento.valorFracao = Integer.valueOf(valorFracao).floatValue();
         }
-        if(validarFloat(valorEvento) == 1){
-            Estacionamento.valorEvento = valorEvento;
+
+        //Verificação da parte da PorcentagemHoraCheia
+        if(porcentagemHoraCheia.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(porcentagemHoraCheia) < 0){
+            throw new ValorAcessoInvalidoException();
         }
-        if(validarInt(porcentagemRetorno)==1) {
-        	this.porcentagemRetorno = porcentagemRetorno;
+            else {
+            Estacionamento.porcentagemHoraCheia = Integer.valueOf(porcentagemHoraCheia);
         }
-        if(validarInt(horaInicio)==1) {
-        	setHoraEntradaEstacionamento(horaInicio) ;
+                
+        //Verificação da parte de porcentagem hora cheia
+        if(valorFracao.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(porcentagemHoraCheia).floatValue() < 0){
+            throw new ValorAcessoInvalidoException();
         }
-        if(validarInt(horaFinal)==1) {
-        	setHoraSaidaEstacionamento(horaFinal);
+            else {
+            Estacionamento.valorDiaria = Integer.valueOf(valorDiaria).floatValue();  
+        }
+        
+         //Verificação da parte da Porcentagem Noturno
+        if(porcentagemNoturno.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(porcentagemNoturno) < 0){
+            throw new ValorAcessoInvalidoException();
+        }
+            else {
+            Estacionamento.porcentagemNoturno = Integer.valueOf(porcentagemNoturno);
+        }
+        //Verificação da parte do valor Mensalista
+        if(valorMensalista.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(valorMensalista).floatValue() < 0){
+            throw new ValorAcessoInvalidoException();
+        }
+            else {
+            Estacionamento.valorMensalista = Integer.valueOf(valorMensalista).floatValue();
+        }
+
+        //Verificação da parte da valor Evento
+        if(valorEvento.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(valorEvento).floatValue() < 0){
+            throw new ValorAcessoInvalidoException();
+        }
+            else {
+            Estacionamento.valorEvento = Integer.valueOf(valorDiaria).floatValue();
+        }
+        
+        //Verificação da parte da PorcentagemRetorno
+        if(porcentagemRetorno.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(porcentagemRetorno) < 0){
+            throw new ValorAcessoInvalidoException();
+        }
+            else {
+            Estacionamento.porcentagemRetorno = Integer.valueOf(porcentagemRetorno);
+        }
+
+        //Verificação da parte da HoraInicio
+        if(horaInicio.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(horaInicio) < 0){
+            throw new ValorAcessoInvalidoException();
+        }
+            else {
+            setHoraEntradaEstacionamento(Integer.valueOf(horaInicio));
+        }
+
+        //Verificação da parte da HoraFinal
+        if(horaFinal.isEmpty()){
+            throw new DescricaoEmBrancoException();
+        } else if(Integer.valueOf(horaFinal) < 0){
+            throw new ValorAcessoInvalidoException();
+        }
+            else {
+            setHoraSaidaEstacionamento(Integer.valueOf(horaFinal));
         }
     }
 
@@ -57,9 +135,14 @@ public class Estacionamento {
     }
 
     public void setCapacidade(int capacidade) {
-        if(validarInt(capacidade) == 1){
-            this.capacidade = capacidade;
-        }
+        this.capacidade = capacidade;
+        
+    }
+    public void setNumEstacionamento(int numero){
+        numEstacionamento = numero;
+    }
+    public int getNumEstacionamento(){
+        return numEstacionamento;
     }
 
     public static float getValorFracao() {
@@ -75,19 +158,17 @@ public class Estacionamento {
     }
 
     public void setPorcentagemHoraCheia(int porcentagemHoraCheia) {
-        if(validarInt(porcentagemHoraCheia) == 1) {
             Estacionamento.porcentagemHoraCheia = porcentagemHoraCheia;
-        }
+        
     }
 
-    public static float getValorDiaria() {
+    public static float getValorDiaria(){
         return Estacionamento.valorDiaria;
     }
 
     public void setValorDiaria(float valorDiaria) {
-        if(validarFloat(valorDiaria) == 1) {
             Estacionamento.valorDiaria = valorDiaria;
-        }
+        
     }
 
     public static int getPorcentagemNoturno() {
@@ -95,9 +176,8 @@ public class Estacionamento {
     }
 
     public void setPorcentagemNoturno(int porcentagemNoturno) {
-        if(validarInt(porcentagemNoturno) == 1) {
             Estacionamento.porcentagemNoturno = porcentagemNoturno;
-        }
+        
     }
 
     public static float getValorMensalista() {
@@ -109,9 +189,8 @@ public class Estacionamento {
     }
 
     public void setValorEvento(float valorEvento) {
-        if(validarFloat(valorEvento) == 1){
             Estacionamento.valorEvento = valorEvento;
-        }
+        
     }
     public static float getValorTotal() {
 		return valorTotal;
@@ -140,36 +219,6 @@ public class Estacionamento {
 		Estacionamento.valorContratante = ganho*(getPorcentagemRetorno()/100);
 		return Estacionamento.valorContratante;
 	}
-	
-	
-    public static int validarInt(int numero){
-        int i;
-        if(numero < 0 ){
-            System.out.println("O campo está em branco ou é inválido");
-            i = 0;
-        }else{
-            i = 1;
-        }
-        return i;
-    }
-
-    public static void validarDescricao(String frase) throws DescricaoEmBrancoException{
-       try{
-        if(frase.isEmpty()){
-            throw new DescricaoEmBrancoException();
-            //System.out.println("O campo está em branco ou é inválido");   
-        }else{
-            
-        }
-    }
-    }
-
-    public static int validarFloat(float numero) throws DescricaoEmBrancoException{
-        String numero2 = Float.toString(numero);
-        try{
-        if(numero2.isEmpty()){
-            throw new DescricaoEmBrancoException();}
-    }
 
   //Tempo
     
@@ -214,9 +263,9 @@ public class Estacionamento {
 	        System.out.println("Valor do contratante: R$"+ Estacionamento.retornoEstacionamento(Estacionamento.caixaEstacionamento(0))+"\n");
 	
 	    }
-    
+
    public void status(){
-        System.out.println("Status do estacionamento ");
+        System.out.println("Status do estacionamento "+ getNumEstacionamento());
         System.out.println("Capacidade máxima: "+ getCapacidade());
         System.out.println("Valor fração: R$ "+ getValorFracao());
         System.out.println("Valor diária diurna: R$ "+ getValorDiaria());

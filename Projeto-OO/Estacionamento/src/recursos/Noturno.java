@@ -33,7 +33,7 @@ public class Noturno extends Acesso{
 
     public int verificar(){
         int validacao = 0;
-        if(getHoraEntrada()>= getMinimoEntrada() && getHoraSaida() <= getMaximoSaida()){
+        if(getHoraEntrada()>= getMinimoEntrada() && getHoraSaida() <= getMaximoSaida() ){
             validacao = 1;
             
         }
